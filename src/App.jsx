@@ -1,6 +1,5 @@
 import { useState } from "react";
-
-import Html5QrcodePlugin from "./components/Html5QR";
+import { QrScanner } from "@yudiel/react-qr-scanner";
 
 function App() {
   const onNewScanResult = (decodedText, decodedResult) => {
@@ -8,16 +7,12 @@ function App() {
   };
 
   return (
-    <>
-      <div className="App">
-        <Html5QrcodePlugin
-          fps={10}
-          qrbox={250}
-          disableFlip={false}
-          qrCodeSuccessCallback={onNewScanResult}
-        />
-      </div>
-    </>
+    <div className="App">
+      <QrScanner
+        onDecode={(result) => console.log(result)}
+        onError={(error) => console.log(error?.message)}
+      />
+    </div>
   );
 }
 
