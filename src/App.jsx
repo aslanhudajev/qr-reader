@@ -9,7 +9,7 @@ function App() {
   return (
     <div className="App">
       <QrScanner
-        onDecode={(result) => console.log(result)}
+        onDecode={(result) => (window.location.href = result)}
         onError={(error) => console.log(error?.message)}
       />
     </div>
