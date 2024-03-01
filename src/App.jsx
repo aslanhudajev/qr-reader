@@ -1,16 +1,13 @@
-import { useState } from "react";
 import { QrScanner } from "@yudiel/react-qr-scanner";
 
 function App() {
-  const onNewScanResult = (decodedText, decodedResult) => {
-    console.log(decodedText);
-  };
-
   return (
     <div className="App">
       <QrScanner
-        onDecode={(result) => (window.location.href = result)}
+        onResult={(result) => (window.location.href = result)}
+        onDecode={(result) => console.log(result)}
         onError={(error) => console.log(error?.message)}
+        scanDelay={2000}
       />
     </div>
   );
