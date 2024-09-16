@@ -8,4 +8,8 @@ export default defineConfig({
     react(),
     VitePWA({ registerType: "autoUpdate" }),
   ],
+  base: './',
+  build: {
+    minify: "terser"
+  }
 })

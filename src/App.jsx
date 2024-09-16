@@ -9,6 +9,7 @@ function App() {
         onDecode={(result) => console.log(result)}
         onError={(error) => console.log(error?.message)}
         scanDelay={2000}
+        audio={false}
       />
     </div>
   );
